@@ -1,0 +1,50 @@
+bin        = $(shell npm bin)
+lsc        = $(bin)/lsc
+browserify = $(bin)/browserify
+groc       = $(bin)/groc
+uglify     = $(bin)/uglifyjs
+VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
+
+
+lib: src/*.ls
+	$(lsc) -o lib -c src/*.ls
+
+dist:
+	mkdir -p dist
+
+dist/<%= pkg.name %>.umd.js: compile dist
+	$(browserify) lib/index.js --standalone <%= pkg.exports %> > $@
+
+dist/<%= pkg.name %>.umd.min.js: dist/<%= pkg.name %>.umd.js
+	$(uglify) --mangle - < $^ > $@
+
+# ----------------------------------------------------------------------
+bundle: dist/<%= pkg.name %>.umd.js
+
+minify: dist/<%= pkg.name %>.umd.min.js
+
+compile: lib
+
+documentation:
+	$(groc) --index "README.md"                                              \
+          --out "docs/literate"                                            \
+          src/*.ls README.md
+
+clean:
+	rm -rf dist build lib
+
+test:
+	$(lsc) test/tap.ls
+
+package: compile documentation bundle minify
+	mkdir -p dist/<%= pkg.name %>-$(VERSION)
+	cp -r docs/literate dist/<%= pkg.name %>-$(VERSION)/docs
+	cp -r lib dist/<%= pkg.name %>-$(VERSION)
+	cp dist/*.js dist/<%= pkg.name %>-$(VERSION)
+	cp package.json dist/<%= pkg.name %>-$(VERSION)
+	cp README.md dist/<%= pkg.name %>-$(VERSION)
+	cp LICENCE dist/<%= pkg.name %>-$(VERSION)
+	cd dist && tar -czf <%= pkg.name %>-$(VERSION).tar.gz <%= pkg.name %>-$(VERSION)
+
+
+.PHONY: test
