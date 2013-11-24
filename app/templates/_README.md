@@ -73,7 +73,14 @@ any JavaScript environment.
     
 ## Documentation
 
-( TBD )
+You can [read the documentation online][docs] or build it yourself:
+
+    $ git clone git://github.com/folktale/monads.maybe.git
+    $ cd monads.maybe
+    $ npm install
+    $ make documentation
+
+Then open the file `docs/literate/index.html` in your browser.
 
 
 ## Platform support
@@ -96,3 +103,4 @@ Released under the [MIT licence](https://github.com/<%= pkg.github %>/<%= pkg.na
 [Make]: http://www.gnu.org/software/make/
 [Node.js]: http://nodejs.org/
 [es5-shim]: https://github.com/kriskowal/es5-shim
+[docs]: http://<%= pkg.github %>.github.io/<%= pkg.name %>
