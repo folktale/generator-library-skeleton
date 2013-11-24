@@ -46,5 +46,18 @@ package: compile documentation bundle minify
 	cp LICENCE dist/<%= pkg.name %>-$(VERSION)
 	cd dist && tar -czf <%= pkg.name %>-$(VERSION).tar.gz <%= pkg.name %>-$(VERSION)
 
+publish: clean
+	npm install
+	npm publish
+
+bump:
+	node tools/bump-version.js $$VERSION_BUMP
+
+bump-feature:
+	VERSION_BUMP=FEATURE $(MAKE) bump
+
+bump-major:
+	VERSION_BUMP=MAJOR $(MAKE) bump
+
 
 .PHONY: test

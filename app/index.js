@@ -54,6 +54,7 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.mkdir('src')
   this.mkdir('test')
   this.mkdir('test/specs')
+  this.mkdir('tools')
 
   this.template('_package.json', 'package.json')
   this.template('_LICENCE', 'LICENCE')
@@ -65,4 +66,5 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_index.ls', 'src/index.ls')
 
   this.copy('_.travis.yml', '.travis.yml')
+  this.copy('tools/bump-version.js', 'tools/bump-version.js')
 }
