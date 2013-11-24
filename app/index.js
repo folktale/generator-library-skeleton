@@ -61,6 +61,7 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_Makefile', 'Makefile')
   this.template('_tap.ls', 'test/tap.ls')
   this.template('_specs.ls', 'test/specs/index.ls')
+  this.template('_monad-laws.ls', 'test/specs/monad-laws.ls')
   this.template('_index.ls', 'src/index.ls')
 
   this.copy('_.travis.yml', '.travis.yml')
