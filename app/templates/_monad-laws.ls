@@ -28,15 +28,15 @@
 # to verify.
 spec = (require 'hifive')!
 laws = require 'laws'
-<%= pkg.exports %> = require '../../src/'
+<%= pkg.exports.split('.').pop() %> = require '../../src/'
 
 # And to use the laws, we need to provide a constructor function, that
 # given a single argument will return a new data structure containing
 # that argument. We also make sure that the constructor for our
 # semigroup implementation lifts the value into a non empty list, so we
 # can concatenate the values.
-make     = (a) -> new <%= pkg.exports %> a
-make-nel = (a) -> new <%= pkg.exports %> [a]
+make     = (a) -> new <%= pkg.exports.split('.').pop() %> a
+make-nel = (a) -> new <%= pkg.exports.split('.').pop() %> [a]
 
 # Then we provide the specification for the test runner. As we're using
 # Hifive here, it expects that each definition for the specification to

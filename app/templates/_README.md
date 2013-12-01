@@ -31,7 +31,7 @@ If you're not using NPM, [Download the latest release][release], and require
 the `<%= pkg.name %>.umd.js` file:
 
 ```js
-var <%= pkg.exports %> = require('<%= pkg.name %>')
+var <%= pkg.exports.split('.').pop() %> = require('<%= pkg.name %>')
 ```
 
 
@@ -41,7 +41,7 @@ var <%= pkg.exports %> = require('<%= pkg.name %>')
 file:
 
 ```js
-require(['<%= pkg.name %>'], function(<%= pkg.exports %>) {
+require(['<%= pkg.name %>'], function(<%= pkg.exports.split('.').pop() %>) {
   ( ... )
 })
 ```
@@ -75,8 +75,8 @@ any JavaScript environment.
 
 You can [read the documentation online][docs] or build it yourself:
 
-    $ git clone git://github.com/folktale/monads.maybe.git
-    $ cd monads.maybe
+    $ git clone git://github.com/<%= pkg.github %>/<%= pkg.name %>.git
+    $ cd <%= pkg.name %>
     $ npm install
     $ make documentation
 
