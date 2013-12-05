@@ -65,6 +65,7 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_monad-laws.ls', 'test/specs/monad-laws.ls')
   this.template('_index.ls', 'src/index.ls')
 
+  this.copy('_.npmignore', '.npmignore')
   this.copy('_.hgignore', '.hgignore')
   this.copy('_.gitignore', '.gitignore')
   this.copy('_.travis.yml', '.travis.yml')
