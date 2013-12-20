@@ -15,5 +15,8 @@ function bump(what, version) {
   :      what === 'FEATURE'?  feature(version)
   :      /* otherwise */      minor(version) }
 
+
+var old_version = pkg.version
 pkg.version = bump(process.argv[2], pkg.version.split('.')).join('.')
 fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2))
+console.log('Bumped from ' + old_version + ' to ' + pkg.version)
