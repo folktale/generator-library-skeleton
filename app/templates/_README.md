@@ -98,9 +98,11 @@ Released under the [MIT licence](https://github.com/<%= pkg.github %>/<%= pkg.na
 <!-- links -->
 [Fantasy Land]: https://github.com/fantasyland/fantasy-land
 [Browserify]: http://browserify.org/
-[release]: https://github.com/<%= pkg.github %>/<%= pkg.name %>/releases/download/v0.0.0/<%= pkg.name %>-0.0.0.tar.gz
 [Git]: http://git-scm.com/
 [Make]: http://www.gnu.org/software/make/
 [Node.js]: http://nodejs.org/
 [es5-shim]: https://github.com/kriskowal/es5-shim
 [docs]: http://<%= pkg.github %>.github.io/<%= pkg.name %>
+<!-- [release: https://github.com/<%= pkg.github %>/<%= pkg.name %>/releases/download/v$VERSION/<%= pkg.name %>-$VERSION.tar.gz] -->
+[release]: https://github.com/<%= pkg.github %>/<%= pkg.name %>/releases/download/v0.0.0/<%= pkg.name %>-0.0.0.tar.gz
+<!-- [/release] -->
