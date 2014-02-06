@@ -23,7 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "git://github.com/killdream/node-browserify",
-    "groc": "git://github.com/killdream/groc#typography",
+    "doxx": "~0.7.2",
     "LiveScript": "~1.2.0",
     "hifive-tap": "~0.1.0",
     "hifive": "~0.1.0",

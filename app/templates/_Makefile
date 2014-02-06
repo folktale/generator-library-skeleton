@@ -1,7 +1,7 @@
 bin        = $(shell npm bin)
 lsc        = $(bin)/lsc
 browserify = $(bin)/browserify
-groc       = $(bin)/groc
+doxx       = $(bin)/doxx
 uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
@@ -25,10 +25,9 @@ minify: dist/<%= pkg.name %>.umd.min.js
 
 compile: lib
 
-documentation:
-	$(groc) --index "README.md"                                              \
-	        --out "docs/literate"                                            \
-	        src/*.ls test/*.ls test/specs/**.ls README.md
+documentation: compile
+  $(doxx) --source lib  \
+	        --target docs \
 
 clean:
 	rm -rf dist build lib
@@ -59,5 +58,4 @@ bump-feature:
 bump-major:
 	VERSION_BUMP=MAJOR $(MAKE) bump
 
-
-.PHONY: test
+.PHONY: test bump bump-feature bump-major publish package clean documentation
