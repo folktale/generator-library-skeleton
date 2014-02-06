@@ -26,8 +26,8 @@ minify: dist/<%= pkg.name %>.umd.min.js
 compile: lib
 
 documentation: compile
-  $(doxx) --source lib  \
-	        --target docs \
+	$(doxx) --source lib  \
+	        --target docs
 
 clean:
 	rm -rf dist build lib
