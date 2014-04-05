@@ -22,8 +22,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "git://github.com/killdream/node-browserify",
-    "doxx": "~0.7.2",
+    "browserify": "^3.33.0",
+    "ink-docstrap": "git://github.com/robotlolita/docstrap",
+    "jsdoc": "^3.3.0-alpha5",
     "LiveScript": "~1.2.0",
     "hifive-tap": "~0.1.0",
     "hifive": "~0.1.0",

@@ -1,7 +1,7 @@
 bin        = $(shell npm bin)
 lsc        = $(bin)/lsc
 browserify = $(bin)/browserify
-doxx       = $(bin)/doxx
+jsdoc      = $(bin)/jsdoc
 uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
@@ -25,9 +25,12 @@ minify: dist/<%= pkg.name %>.umd.min.js
 
 compile: lib
 
-documentation: compile
-	$(doxx) --source lib  \
-	        --target docs
+documentation: compile dev-tools
+	$(jsdoc) --configure jsdoc.conf.json
+	ABSPATH=$(shell cd "$(dirname "$0")"; pwd) $(MAKE) clean-docs
+
+clean-docs:
+	perl -pi -e "s?$$ABSPATH/??g" ./docs/*.html
 
 clean:
 	rm -rf dist build lib

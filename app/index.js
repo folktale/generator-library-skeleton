@@ -57,6 +57,7 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.mkdir('tools')
 
   this.template('_package.json', 'package.json')
+  this.template('_jsdoc.conf.json', 'jsdoc.conf.json')
   this.template('_LICENCE', 'LICENCE')
   this.template('_README.md', 'README.md')
   this.template('_Makefile', 'Makefile')
