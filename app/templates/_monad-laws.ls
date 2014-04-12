@@ -1,7 +1,7 @@
 # # Specification for the monadic laws
 
 /** ^
- * Copyright (c) 2013 <%= pkg.user %>
+ * Copyright (c) 2014 <%= pkg.user %>
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files
@@ -28,7 +28,7 @@
 # to verify.
 spec = (require 'hifive')!
 laws = require 'laws'
-<%= pkg.exports.split('.').pop() %> = require '../../src/'
+<%= pkg.exports.split('.').pop() %> = require '../../lib/'
 
 # And to use the laws, we need to provide a constructor function, that
 # given a single argument will return a new data structure containing

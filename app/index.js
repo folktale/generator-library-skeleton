@@ -51,7 +51,7 @@ LibrarySkeletonGenerator.prototype.askFor = function askFor() {
 }
 
 LibrarySkeletonGenerator.prototype.library = function library() {
-  this.mkdir('src')
+  this.mkdir('lib')
   this.mkdir('test')
   this.mkdir('test/specs')
   this.mkdir('tools')
@@ -64,7 +64,7 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_tap.ls', 'test/tap.ls')
   this.template('_specs.ls', 'test/specs/index.ls')
   this.template('_monad-laws.ls', 'test/specs/monad-laws.ls')
-  this.template('_index.ls', 'src/index.ls')
+  this.template('_index.js', 'lib/index.js')
 
   this.copy('_.npmignore', '.npmignore')
   this.copy('_.hgignore', '.hgignore')

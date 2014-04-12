@@ -1,7 +1,7 @@
 # # Entry point for the specifications
 
 /** ^
- * Copyright (c) 2013 <%= pkg.user %>
+ * Copyright (c) 2014 <%= pkg.user %>
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files

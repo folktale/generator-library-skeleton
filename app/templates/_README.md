@@ -80,7 +80,7 @@ You can [read the documentation online][docs] or build it yourself:
     $ npm install
     $ make documentation
 
-Then open the file `docs/literate/index.html` in your browser.
+Then open the file `docs/index.html` in your browser.
 
 
 ## Platform support
@@ -91,7 +91,7 @@ platforms by the use of shims. Just include [es5-shim][] :)
 
 ## Licence
 
-Copyright (c) 2013 <%= pkg.user %>.
+Copyright (c) 2014 <%= pkg.user %>.
 
 Released under the [MIT licence](https://github.com/<%= pkg.github %>/<%= pkg.name %>/blob/master/LICENCE).
 

@@ -6,13 +6,10 @@ uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
 
-lib: src/*.ls
-	$(lsc) -o lib -c src/*.ls
-
 dist:
 	mkdir -p dist
 
-dist/<%= pkg.name %>.umd.js: compile dist
+dist/<%= pkg.name %>.umd.js: dist
 	$(browserify) lib/index.js --standalone <%= pkg.exports %> > $@
 
 dist/<%= pkg.name %>.umd.min.js: dist/<%= pkg.name %>.umd.js
@@ -22,8 +19,6 @@ dist/<%= pkg.name %>.umd.min.js: dist/<%= pkg.name %>.umd.js
 bundle: dist/<%= pkg.name %>.umd.js
 
 minify: dist/<%= pkg.name %>.umd.min.js
-
-compile: lib
 
 documentation: compile dev-tools
 	$(jsdoc) --configure jsdoc.conf.json
@@ -38,9 +33,9 @@ clean:
 test:
 	$(lsc) test/tap.ls
 
-package: compile documentation bundle minify
+package: documentation bundle minify
 	mkdir -p dist/<%= pkg.name %>-$(VERSION)
-	cp -r docs/literate dist/<%= pkg.name %>-$(VERSION)/docs
+	cp -r docs dist/<%= pkg.name %>-$(VERSION)
 	cp -r lib dist/<%= pkg.name %>-$(VERSION)
 	cp dist/*.js dist/<%= pkg.name %>-$(VERSION)
 	cp package.json dist/<%= pkg.name %>-$(VERSION)
