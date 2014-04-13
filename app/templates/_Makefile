@@ -20,7 +20,7 @@ bundle: dist/<%= pkg.name %>.umd.js
 
 minify: dist/<%= pkg.name %>.umd.min.js
 
-documentation: dev-tools
+documentation:
 	$(jsdoc) --configure jsdoc.conf.json
 	ABSPATH=$(shell cd "$(dirname "$0")"; pwd) $(MAKE) clean-docs
 
