@@ -6,7 +6,8 @@ uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
 # -- Configuration -----------------------------------------------------
-PACKGE   = <%= pkg.name %>
+PACKGE   = NAME
+EXPORTS  = EXPORTS
 
 LIB_DIR  = lib
 SRC_DIR  = src
@@ -24,7 +25,7 @@ dist:
 	mkdir -p $@
 
 dist/$(PACKAGE).umd.js: $(LIB_DIR)/index.js dist
-	$(browserify) $< --standalone <%= pkg.exports %> > $@
+	$(browserify) $< --standalone $(EXPORTS) > $@
 
 dist/$(PACKAGE).umd.min.js: dist/$(PACKAGE).umd.js
 	$(uglify) --mangle - < $< > $@
