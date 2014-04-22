@@ -51,9 +51,9 @@ LibrarySkeletonGenerator.prototype.askFor = function askFor() {
 }
 
 LibrarySkeletonGenerator.prototype.library = function library() {
-  this.mkdir('lib')
+  this.mkdir('src')
   this.mkdir('test')
-  this.mkdir('test/specs')
+  this.mkdir('test/specs-src')
   this.mkdir('tools')
 
   this.template('_package.json', 'package.json')
@@ -61,10 +61,10 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_LICENCE', 'LICENCE')
   this.template('_README.md', 'README.md')
   this.template('_Makefile', 'Makefile')
-  this.template('_tap.ls', 'test/tap.ls')
-  this.template('_specs.ls', 'test/specs/index.ls')
-  this.template('_monad-laws.ls', 'test/specs/monad-laws.ls')
-  this.template('_index.js', 'lib/index.js')
+  this.template('_tap.sjs', 'test/tap.sjs')
+  this.template('_specs.sjs', 'test/specs-src/index.sjs')
+  this.template('_monad-laws.sjs', 'test/specs-src/monad-laws.sjs')
+  this.template('_index.js', 'src/index.sjs')
 
   this.copy('_.npmignore', '.npmignore')
   this.copy('_.hgignore', '.hgignore')
