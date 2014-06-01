@@ -37,7 +37,7 @@ $(LIB_DIR)/%.js: $(SRC_DIR)/%.sjs
 	       --output $@      \
 	       $<
 
-$(TEST_BLD)/%.js: %(TEST_DIR)/%.sjs
+$(TEST_BLD)/%.js: $(TEST_DIR)/%.sjs
 	mkdir -p $(dir $@)
 	$(sjs) --readable-names        \
 	       --module alright/macros \
