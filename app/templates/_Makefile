@@ -6,8 +6,8 @@ uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
 # -- Configuration -----------------------------------------------------
-PACKGE   = NAME
-EXPORTS  = EXPORTS
+PACKGE   = <%= pkg.name %>
+EXPORTS  = <%= pkg.exports %>
 
 LIB_DIR  = lib
 SRC_DIR  = src
@@ -40,6 +40,7 @@ $(LIB_DIR)/%.js: $(SRC_DIR)/%.sjs
 $(TEST_BLD)/%.js: $(TEST_DIR)/%.sjs
 	mkdir -p $(dir $@)
 	$(sjs) --readable-names        \
+	       --module hifive/macros  \
 	       --module alright/macros \
 	       --output $@             \
 	       $<
@@ -60,9 +61,9 @@ clean-docs:
 	perl -pi -e "s?$$ABSPATH/??g" ./docs/*.html
 
 clean:
-	rm -rf dist build
+	rm -rf dist build $(LIB_DIR)
 
-test: $(TEST_TGT)
+test: all $(TEST_TGT)
 	node test/tap
 
 package: documentation bundle minify
@@ -75,7 +76,7 @@ package: documentation bundle minify
 	cp LICENCE dist/$(PACKAGE)-$(VERSION)
 	cd dist && tar -czf $(PACKAGE)-$(VERSION).tar.gz $(PACKAGE)-$(VERSION)
 
-publish: clean
+publish: clean test
 	npm install
 	npm publish
 

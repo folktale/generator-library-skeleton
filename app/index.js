@@ -59,10 +59,10 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_package.json', 'package.json')
   this.template('_jsdoc.conf.json', 'jsdoc.conf.json')
   this.template('_LICENCE', 'LICENCE')
+  this.template('_CONTRIBUTING.md', 'CONTRIBUTING.md')
   this.template('_README.md', 'README.md')
-  this.template('_tap.sjs', 'test/tap.sjs')
+  this.template('_run.js', 'test/run.js')
   this.template('_specs.sjs', 'test/specs-src/index.sjs')
-  this.template('_monad-laws.sjs', 'test/specs-src/monad-laws.sjs')
   this.template('_index.js', 'src/index.sjs')
 
   this.copy('_Makefile', 'Makefile')

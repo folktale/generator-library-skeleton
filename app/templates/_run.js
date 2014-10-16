@@ -19,14 +19,8 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-// This will run the tests in a Node environment, and present the results
-// with the TAP reporter.
-var hifive = require('hifive')
-var tap    = require('hifive-tap')
-var specs  = require('./specs')
+var hifive   = require('hifive')
+var reporter = require('hifive-spec')()
+var specs    = require('./specs')
 
-// If we, for any reason, fail any of the tests, signal that with an
-// error exit status.
-hifive.run(specs, tap()).otherwise(function() {
-  if (typeof process != 'undefined')  process.exit(1)
-})
+hifive.runWithDefaults(specs, reporter)
