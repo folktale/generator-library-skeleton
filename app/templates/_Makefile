@@ -6,7 +6,7 @@ uglify     = $(bin)/uglifyjs
 VERSION    = $(shell node -e 'console.log(require("./package.json").version)')
 
 # -- Configuration -----------------------------------------------------
-PACKGE   = <%= pkg.name %>
+PACKAGE  = <%= pkg.name %>
 EXPORTS  = <%= pkg.exports %>
 
 LIB_DIR  = lib
