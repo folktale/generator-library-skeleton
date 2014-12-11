@@ -1,10 +1,11 @@
 <%= pkg.name %>
 <%= Array(pkg.name.length + 1).join('=') %>
 
-[![Build Status](https://secure.travis-ci.org/<%= pkg.github %>/<%= pkg.name %>.png?branch=master)](https://travis-ci.org/<%= pkg.github %>/<%= pkg.name %>)
-[![NPM version](https://badge.fury.io/js/<%= pkg.name %>.png)](http://badge.fury.io/js/<%= pkg.name %>)
-[![Dependencies Status](https://david-dm.org/<%= pkg.github %>/<%= pkg.name %>.png)](https://david-dm.org/<%= pkg.github %>/<%= pkg.name %>)
-[![experimental](http://hughsk.github.io/stability-badges/dist/experimental.svg)](http://github.com/hughsk/stability-badges)
+[![Build status](https://img.shields.io/travis/<%= pkg.github %>/<%= pkg.name %>/master.svg?style=flat)](https://travis-ci.org/<%= pkg.github %>/<%= pkg.name %>)
+[![NPM version](https://img.shields.io/npm/v/npm.svg?style=flat)](https://npmjs.org/package/<%= pkg.name %>)
+[![Dependencies status](https://img.shields.io/david/<%= pkg.github %>/<%= pkg.name %>.svg?style=flat)](https://david-dm.org/<%= pkg.github %>/<%= pkg.name %>)
+![Licence](https://img.shields.io/npm/l/<%= pkg.name %>.svg?style=flat&label=licence)
+![Experimental](https://img.shields.io/badge/stability-experimental-orange.svg?style=flat)
 
 
 <%= pkg.description %>
