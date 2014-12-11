@@ -1,6 +1,6 @@
 {
   "name": "generator-library-skeleton",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "A skeleton for folktale libraries",
   "keywords": [
     "yeoman-generator"
