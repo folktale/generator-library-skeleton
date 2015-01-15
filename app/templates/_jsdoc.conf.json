@@ -15,7 +15,7 @@
 		"theme": "cerulean",
 		"linenums": true,
 		"navType": "vertical",
-		"copyright": "© 2014 <%= pkg.user %>",
+		"copyright": "© 2015 <%= pkg.user %>",
     "default": {
       "outputSourceFiles": true
     }

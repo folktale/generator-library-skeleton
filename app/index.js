@@ -64,10 +64,9 @@ LibrarySkeletonGenerator.prototype.library = function library() {
   this.template('_run.js', 'test/run.js')
   this.template('_specs.sjs', 'test/specs-src/index.sjs')
   this.template('_index.js', 'src/index.sjs')
+  this.template('_Makefile', 'Makefile')
 
-  this.copy('_Makefile', 'Makefile')
   this.copy('_.npmignore', '.npmignore')
-  this.copy('_.hgignore', '.hgignore')
   this.copy('_.gitignore', '.gitignore')
   this.copy('_.travis.yml', '.travis.yml')
   this.copy('tools/bump-version.js', 'tools/bump-version.js')

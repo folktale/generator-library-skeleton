@@ -24,10 +24,10 @@
     "browserify": "^6.1.0",
     "ink-docstrap": "git://github.com/robotlolita/docstrap",
     "jsdoc": "^3.3.0-alpha5",
-    "hifive-spec": "^0.2.2",
-    "hifive": "^0.4.0",
+    "specify-reporter-spec": "^0.2.2",
+    "specify-core": "^0.4.0",
     "uglify-js": "^2.4.15",
     "alright": "^1.1.0",
-    "sweet.js": "^0.7.1"
+    "sweet.js": "0.7.1"
   }
 }
