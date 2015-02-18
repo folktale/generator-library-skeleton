@@ -24,8 +24,8 @@
     "browserify": "^6.1.0",
     "ink-docstrap": "git://github.com/robotlolita/docstrap",
     "jsdoc": "^3.3.0-alpha5",
-    "specify-reporter-spec": "^0.2.2",
-    "specify-core": "^0.4.0",
+    "specify-reporter-spec": "^1.0.0",
+    "specify-core": "^1.0.1",
     "uglify-js": "^2.4.15",
     "alright": "^1.1.0",
     "sweet.js": "0.7.1"
