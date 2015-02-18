@@ -10,6 +10,8 @@ util.inherits(LibrarySkeletonGenerator, yeoman.generators.Base)
 function LibrarySkeletonGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments)
 
+  this._.templateSettings.interpolate = /<%=([\s\S]+?)%>/g;
+
   this.on('end', function () {
     this.installDependencies({ skipInstall: options['skip-install'] })})
 
