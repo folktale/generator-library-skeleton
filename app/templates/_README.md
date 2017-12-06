@@ -99,7 +99,7 @@ Released under the [MIT licence](https://github.com/<%= pkg.github %>/<%= pkg.na
 [Make]: http://www.gnu.org/software/make/
 [Node.js]: http://nodejs.org/
 [es5-shim]: https://github.com/kriskowal/es5-shim
-[docs]: http://docs.folktalejs.org/
+[docs]: http://folktalegithubio.readthedocs.io/en/latest/index.html
 <!-- [release: https://github.com/<%= pkg.github %>/<%= pkg.name %>/releases/download/v$VERSION/<%= pkg.name %>-$VERSION.tar.gz] -->
 [release]: https://github.com/<%= pkg.github %>/<%= pkg.name %>/releases/download/v0.0.0/<%= pkg.name %>-0.0.0.tar.gz
 <!-- [/release] -->
